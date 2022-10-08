@@ -15,17 +15,15 @@
             <div class="col">
             </div>
             <div class="col-8">
+                <form action="{{route('make_history')}}" method="post">
+                    @csrf
                     <select class="form-select" aria-label="Default select example" w="10">
-                        <option selected>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        @foreach($ar as $el)
+                            <option value="{{$el->brand}}">{{$el->brand}}</option>
+                        @endforeach
                     </select>
-                    <form action="#" method="post">
-                        @csrf
-                        <input type="hidden" name="table" value="{{}}">
-                        <br><button type="submit" class="btn btn-success">Отправить</button>
-                    </form>
+                    <br><button type="submit" class="btn btn-success">Отправить</button>
+                </form>
             </div>
             <div class="col">
             </div>

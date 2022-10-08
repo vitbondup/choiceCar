@@ -14,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/','App\Http\Controllers\GetBrandsController@index')->name('index');
+Route::post('/','App\Http\Controllers\GetBrandsController@make_history')->name('make_history');
