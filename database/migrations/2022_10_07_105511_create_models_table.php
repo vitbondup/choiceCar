@@ -16,7 +16,7 @@ class CreateModelsTable extends Migration
         Schema::create('models', function (Blueprint $table) {
             $table->id();
             $table->string('model');
-            $table->string('brands_id');
+            $table->string('brand_id');
         });
     }
 
