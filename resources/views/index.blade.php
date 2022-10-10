@@ -31,6 +31,9 @@
 
                     <br><button id="btn" style="display:none" type="submit" class="btn btn-success">Відправити</button>
                 </form>
+                @if(session('message'))
+                    <div class="alert alert-success">{{session('message')}}</div>
+                @endif
             </div>
             <div class="col">
             </div>
