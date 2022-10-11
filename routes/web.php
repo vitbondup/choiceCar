@@ -12,5 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/history','App\Http\Controllers\choiceCarController@getHistory')->name('get_history');
 Route::get('/','App\Http\Controllers\choiceCarController@getBrands')->name('get_brands');
 Route::post('/','App\Http\Controllers\choiceCarController@store')->name('store');

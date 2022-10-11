@@ -19,9 +19,11 @@
                     @csrf
                     <select id="chois-brand" name="chois-brand" class="form-select" aria-label="Default select example" w="10">
                         <option selected disabled>Вибери марку авто</option>
+                        @isset($ar1)
                         @foreach($ar1 as $el)
                             <option value="{{$el->id}}">{{$el->brand}}</option>
                         @endforeach
+                        @endisset
                     </select>
                     <br>
 
@@ -34,6 +36,31 @@
                 @if(session('message'))
                     <div class="alert alert-success">{{session('message')}}</div>
                 @endif
+                <br>
+                <a href="{{route('get_history')}}">Переглянути базу</a>&nbsp&nbsp
+                <a href="{{route('get_brands')}}">Почати спочатку</a>
+                @isset($ar3)
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">id</th>
+                            <th scope="col">created_at</th>
+                            <th scope="col">brand</th>
+                            <th scope="col">model</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($ar3 as $el)
+                                <tr>
+                                    <th scope="row">{{$el->id}}</th>
+                                    <td>{{$el->created_at}}</td>
+                                    <td>{{$el->brand}}</td>
+                                    <td>{{$el->model}}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                @endisset
             </div>
             <div class="col">
             </div>

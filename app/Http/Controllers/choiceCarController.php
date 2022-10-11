@@ -25,6 +25,10 @@ class choiceCarController extends Controller
         $history->model=$m->model;
         $history->save();
 
-        return redirect()->route('get_brands')->with('message','Дані успішно збережено!');
+        return redirect()->route('get_brands')
+            ->with('message','Дані успішно збережено!');
    }
+    public function getHistory(){
+        return view('index', ['ar3'=>History::all()->sortByDesc('created_at')]);
+    }
 }
