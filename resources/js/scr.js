@@ -1,7 +1,10 @@
 let chois_brand = document.querySelector('#chois-brand')
 let chois_model = document.querySelector('#chois-model')
+let btn = document.querySelector('#btn')
 
     chois_brand.onchange=function(){
+        btn.style.display='block'
+        btn.disabled=true
     axios.get('api/m/'+this.value)
         .then(function (data) {
             chois_model.disabled=false
@@ -14,7 +17,6 @@ let chois_model = document.querySelector('#chois-model')
         })
     }
     chois_model.onchange=function(){
-        let btn = document.querySelector('#btn')
-        btn.style.display='block'
+        btn.disabled=false
     }
 
